@@ -7,21 +7,10 @@
 html {
     /* Variaveis*/
     --bg-color: #706677;
+    --input-color: grey;
     --text-color: #00082F;
     --primary-color:#4263EB;
     --primary-color-dark: #364FC7;
-}
-
-body.dark-blue {
-    --bg-color: #00082F;
-    --text-color: #FFFFFF;
-}
-
-body.pink {
-    --bg-color: #FFF0F6;
-    --text-color: #1F000B;
-    --primary-color: #D6336C;
-    --primary-color-dark: #a61e4d;
 }
 
 body {
@@ -35,11 +24,66 @@ a {
     text-decoration: none;
 }
 
+.dark-mode {
+    --bg-color: #00082F;
+    --text-color: #FFFFFF;
+}
+
+.pink {
+    --bg-color: #FFF0F6;
+    --text-color: #1F000B;
+    --primary-color: #D6336C;
+    --primary-color-dark: #a61e4d;
+}
+
 .container {
     text-align: center;
     width: 300px;
     margin: 60px auto;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background: var(--input-color);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
 
 img {
     width: 100%;
